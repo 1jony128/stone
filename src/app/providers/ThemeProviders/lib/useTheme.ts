@@ -7,18 +7,18 @@ interface useThemeResult {
 }
 
 const useTheme = (): useThemeResult => {
-    const {setTheme, theme} = useContext(ThemeContext);
+    const { setTheme, theme } = useContext(ThemeContext);
 
-   const toogleTheme = useCallback(() => {
-    const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK
-    setTheme(newTheme)
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
-}, [theme]);
+    const toogleTheme = useCallback(() => {
+        const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+        setTheme(newTheme);
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+    }, [theme]);
 
     return {
-    theme,
-    toogleTheme
-    }
+        theme,
+        toogleTheme,
+    };
 };
 
 export default useTheme;
